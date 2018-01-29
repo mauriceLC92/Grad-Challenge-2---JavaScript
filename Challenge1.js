@@ -33,4 +33,4 @@ function findChildren(santasList, children)
 console.log(findChildren(santasList, children));
 
 
-//Sort out the case sensitivity for htis problem
+//Sort out the case sensitivity for this problem
