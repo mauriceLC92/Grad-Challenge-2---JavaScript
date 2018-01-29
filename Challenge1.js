@@ -34,3 +34,12 @@ console.log(findChildren(santasList, children));
 
 
 //Sort out the case sensitivity for this problem
+// var array2 = ["melon","banana","apple","orange","lemon"];
+// array2.map(function(x){ return x.toUpperCase() })
+
+// or
+
+// toUpper = function(x){ 
+//     return x.toUpperCase();
+//   };
+//   array2.map(toUpper);
