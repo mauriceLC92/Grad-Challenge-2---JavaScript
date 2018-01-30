@@ -14,20 +14,29 @@ The string a1b1c1d1e1 decompresses to abcde
 let strOutput = "";
 var x = [];
 var y = "";
+
 function compression(strInput)
 {
     let s = strInput.match(/([a-zA-Z])\1*/g) || [];
     return s.map(function(itm)
     {
 
-        x = [itm.charAt(0), itm.length];
-        console.log(x);
-        y = y + x + "";
-        console.log(y);
+        x.push([itm.charAt(0), itm.length]);
+        arrToString(x);
         return x;
     });
 }
 
+function arrToString(arr)
+{
+    for(let i = 0; i < arr.length; i++)
+    {
+        y = arr.toString();
+        y = y.replace(/,/g, '');
+    }
+}
 
-//console.log(compression("aabbbcccccaa"));
+
 compression("aabbbcccccaa");
+
+console.log(y);
