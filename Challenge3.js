@@ -6,8 +6,8 @@ Show the latency between each request and calculate the average time in millisec
 Reference: https://en.wikipedia.org/wiki/Unix_time
 */
 
-var fetch = require('node-fetch');
-var startTime = new Date().getTime();
+let fetch = require('node-fetch');
+let startTime = new Date().getTime();
 
 let arrTime = [];
 let totalTime = 0;
@@ -38,7 +38,8 @@ function fetchRequests()
 
       arrTime.push(res.milliseconds_since_epoch - startTime);
       console.log("Latency for request:", arrTime.length ,"is: ",res.milliseconds_since_epoch - startTime , "milliseconds");
-      console.log(arrTime);
+      //console.log(arrTime);
+      
   });
 }
 
