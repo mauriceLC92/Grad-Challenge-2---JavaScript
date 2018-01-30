@@ -11,7 +11,7 @@ The string g2j2 decompresses to ggjj
 The string a1b1c1d1e1 decompresses to abcde
 */
 
-let strOutput = "";
+
 var compressedArr = [];
 var compressedStrArr = "";
 
@@ -37,6 +37,24 @@ function arrToString(arr)
     }
 }
 
+//compression("aabbbcccccaa");
+//compression("xxyzzzx");
+//console.log(compressedStrArr);
 
-compression("aabbbcccccaa");
-console.log(compressedStrArr);
+
+function decompression(str) // adjust to check if it is taking in an alphanumeric value
+{
+    var decompressedStr = "";
+    for(let i = 0; i < str.length; i++)
+    {
+        if(i%2 == 0)
+        {
+            decompressedStr += str.charAt(i).repeat(parseInt(str.charAt(i+1)));
+            //console.log(str.charAt(i).repeat(parseInt(str.charAt(i+1))));
+        }
+    }
+    return decompressedStr;
+}
+
+console.log(decompression("a1b1c1d1e1"));
+console.log(decompression("g2j2"));
