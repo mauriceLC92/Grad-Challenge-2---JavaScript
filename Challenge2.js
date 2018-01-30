@@ -18,7 +18,7 @@ var compressedStrArr = "";
 
 function compression(strInput)
 {
-    let s = strInput.match(/([a-zA-Z])\1*/g) || [];
+    let s = strInput.match(/([a-zA-Z])\1*/g) || []; 
     return s.map(function(itm)
     {
 
@@ -42,7 +42,7 @@ function arrToString(arr)
 //console.log(compressedStrArr);
 
 
-function decompression(str) // adjust to check if it is taking in an alphanumeric value
+function decompression(str) 
 {
     var decompressedStr = "";
     for(let i = 0; i < str.length; i++)
