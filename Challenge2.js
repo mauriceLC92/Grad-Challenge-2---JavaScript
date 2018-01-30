@@ -12,8 +12,9 @@ The string a1b1c1d1e1 decompresses to abcde
 */
 
 let strOutput = "";
-var x = [];
-var y = "";
+var compressedArr = [];
+var compressedStrArr = "";
+
 
 function compression(strInput)
 {
@@ -21,22 +22,21 @@ function compression(strInput)
     return s.map(function(itm)
     {
 
-        x.push([itm.charAt(0), itm.length]);
-        arrToString(x);
-        return x;
+        compressedArr.push([itm.charAt(0), itm.length]);
+        arrToString(compressedArr);
+        
+        //return compressedArr;
     });
 }
-
 function arrToString(arr)
 {
     for(let i = 0; i < arr.length; i++)
     {
-        y = arr.toString();
-        y = y.replace(/,/g, '');
+        compressedStrArr = arr.toString();
+        compressedStrArr = compressedStrArr.replace(/,/g, '');
     }
 }
 
 
 compression("aabbbcccccaa");
-
-console.log(y);
+console.log(compressedStrArr);
