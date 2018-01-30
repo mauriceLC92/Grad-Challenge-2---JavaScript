@@ -1,0 +1,23 @@
+{
+  "name": "challeneges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Challenge3.js",
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauriceLC92/Grad-Challenge-2---JavaScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mauriceLC92/Grad-Challenge-2---JavaScript/issues"
+  },
+  "homepage": "https://github.com/mauriceLC92/Grad-Challenge-2---JavaScript#readme"
+}

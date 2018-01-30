@@ -80,4 +80,11 @@ function orchestrateUsers(users) // Method 1
 }
 
 orchestrateUsers(userList);
-console.log(result);
+console.log(result); //typeof: Object with arrays inside
+console.log(result.Admin[0]);
+
+
+
+function searchUsers(orchestratedUsers, userTypes, property, value) {
+    // Add code here
+}
