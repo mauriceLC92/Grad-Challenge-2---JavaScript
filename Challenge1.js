@@ -16,7 +16,7 @@ let returnedSantaList = [];
 
 function findChildren(santasList, children) 
 {
-    for(let j = 0; j < santasList.length; j ++)
+    for(let j = 0; j < children.length; j ++)
     {
         
         if(santasList.includes(children[j]))
