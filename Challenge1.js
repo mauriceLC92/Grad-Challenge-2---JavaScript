@@ -12,10 +12,9 @@ let santasList2 = ["Tom","Errol","Sam", "mistyMay","Peter","Jennifer", "macMerph
 let children2 = ["Errol", "Peter", "jennifer", "mistymay", "MacMerphy"];
 
 
-let returnedSantaList = [];
-
 function findChildren(santasList, children) 
 {
+    let returnedSantaList = [];
     for(let j = 0; j < children.length; j ++)
     {
         
@@ -31,15 +30,4 @@ function findChildren(santasList, children)
 }
 
 console.log(findChildren(santasList, children));
-
-
-//Sort out the case sensitivity for this problem
-// var array2 = ["melon","banana","apple","orange","lemon"];
-// array2.map(function(x){ return x.toUpperCase() })
-
-// or
-
-// toUpper = function(x){ 
-//     return x.toUpperCase();
-//   };
-//   array2.map(toUpper);
+console.log(findChildren(santasList2, children2));
