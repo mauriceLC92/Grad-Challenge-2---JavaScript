@@ -3,7 +3,6 @@ Challenge 5 - Array Merge
 
 Take the two arrays of objects that are provided and merge them in to one using the _id field as the unique identifier.
 */
-let dataSetresult = [];
 
 let dataSet1 = 
 [
@@ -134,47 +133,38 @@ let dataSet2 =
 ];
 
 
-if(dataSet1[1]._id.includes(dataSet2[0]._id))
+let dataSetresult = [];
+
+function arrayMerge(arr1,arr2)
 {
-    console.log("found");
-}
-else{
-    console.log("not correct ID");
-}
+    const data1Len = arr1.length;
+    const data2Len = arr2.length;
 
-let dataMap = dataSet1.map(function(){
-    if(dataSet1._id === dataSet2._id)
+    if(data1Len >= data2Len) //Determine largest dataSet in case they are not the same size...Required for the include() function so all values in the smaller dataSet are compared to the bigger one
     {
-        
-    }
-})
-
-for(let i = 0; i < dataSet1.length; i++)
-{
-    if(dataSet1[i]._id === dataSet2[i]._id)
-    {
-
-    }
-}
-
-const data1Len = dataSet1.length;
-const data2Len = dataSet2.length;
-
-if(data1Len >= data2Len) //Determine largest dataSet incase they are not the same size...Required for the include() function so all values in the smaller dataSet are comapred to the bigger one
-{
-    for(let i = 0; i < data1Len; i++)
-    {
-        if(dataSet1[i]._id.includes(dataSet2[i]._id))
+        for(let i = 0; i < data1Len; i++)
         {
-            dataSetresult.push(Object.assign(dataSet1[i], dataSet2[i]));
+            if(arr1[i]._id.includes(arr2[i]._id))
+            {
+                dataSetresult.push(Object.assign(arr1[i], arr2[i]));
+            }
         }
+        return dataSetresult;
+    }
+    else
+    {
+        for(let i = 0; i < data1Len; i++)
+        {
+            if(arr2[i]._id.includes(arr1[i]._id))
+            {
+                dataSetresult.push(Object.assign(arr2[i], arr1[i]));
+            }
+        }
+        return dataSetresult;
     }
 }
-else
-{ // Use dataSet2 for the arry for includes
 
-}
-
+arrayMerge(dataSet1, dataSet2);
 console.log(dataSetresult);
 
 
