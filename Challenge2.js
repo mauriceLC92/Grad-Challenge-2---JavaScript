@@ -37,9 +37,9 @@ function arrToString(arr)
     }
 }
 
-//compression("aabbbcccccaa");
+compression("aabbbcccccaa");
 //compression("xxyzzzx");
-//console.log(compressedStrArr);
+console.log(compressedStrArr);
 
 
 function decompression(str) 

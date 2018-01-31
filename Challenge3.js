@@ -44,3 +44,4 @@ function fetchRequests()
 }
 
 networkPerfCalculator(5);
+
