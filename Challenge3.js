@@ -8,18 +8,8 @@ Reference: https://en.wikipedia.org/wiki/Unix_time
 
 let fetch = require('node-fetch');
 let startTime = new Date().getTime();
-
 let arrTime = [];
 let totalTime = 0;
-
-// fetch('http://date.jsontest.com/')
-// .then((res)=> res.json())
-// .then ((res) => {
-//     arrTime.push(res.milliseconds_since_epoch);
-//     console.log(res.milliseconds_since_epoch - startTime , "milliseconds");
-//     console.log(arrTime);
-// });
-
 
 function networkPerfCalculator(numOfRequests)
 {
@@ -29,17 +19,20 @@ function networkPerfCalculator(numOfRequests)
     }
     
 }
-
+let requestSum = 0;
+let i = 0;
 function fetchRequests()
 {
+
   fetch('http://date.jsontest.com/')
   .then((res)=> res.json())
   .then ((res) => {
-
+      startTime;
       arrTime.push(res.milliseconds_since_epoch - startTime);
       console.log("Latency for request:", arrTime.length ,"is: ",res.milliseconds_since_epoch - startTime , "milliseconds");
-      //console.log(arrTime);
-      
+      requestSum += arrTime[i];
+      i++;
+      console.log('Average time for all requests: ',(requestSum/arrTime.length), ' milliseconds');
   });
 }
 
