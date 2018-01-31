@@ -53,24 +53,6 @@ let userList = [
 
 let result = {};
 
-const Admin = {
-    name: "",
-    companyId: "",
-    type: "",
-};
-
-const Moderator = {
-    name: "",
-    companyId: "",
-    type: "",
-};
-
-const User = {
-    name: "",
-    companyId: "",
-    type: "",
-};
-
 function orchestrateUsers(users) // Method 1
 {
     result = users.reduce(function (r, a) {
@@ -80,34 +62,25 @@ function orchestrateUsers(users) // Method 1
     }, {});
 }
 
-orchestrateUsers(userList);
-// console.log(result);
-//console.log(result.Admin[0].companyId);
-//console.log(result['Admin']); 
-//console.log(typeof(result)); //typeof: Object with arrays inside
+orchestrateUsers(userList); // Calls method 1 
+console.log(result);// Prints the desired result for method 1
 
+console.log("--------------------------------------------");// Seperating method 1 and 2's results
 
 let userTypes = ['Admin','Moderator','User'];
 
 let returnedUser = [];
-function searchUsers(orchestratedUsers, userTypes, property, value) {
-    console.log(orchestratedUsers[userTypes]);
+
+function searchUsers(orchestratedUsers, userTypes, property, value) { // My method only filters with one userType, I couldnt get it to take an array before the end of the day
+
+
     returnedUser = orchestratedUsers[userTypes].filter(function (search)
     {
-        
-        return (search.property === value);
+        return (search[property] === value);
     });
+
 }
 
-function searchUsers(orchestratedUsers, userTypes, property, value) {
+searchUsers(result, 'User', 'companyId', 'A2100');//Calls method 2...(cannot take in array for userType unfortunately...)
 
-  returnedUser = orchestratedUsers[userTypes].filter(function (search)
-  {
-      return (search[property] === value);
-  });
-}
-
-//Surely the function shouldnt take in an array but jus a certain type from the array....?
-searchUsers(result, 'User', 'companyId', 'A2100');
-
-console.log(returnedUser);
+console.log(returnedUser);// Prints desired result for Method 2
