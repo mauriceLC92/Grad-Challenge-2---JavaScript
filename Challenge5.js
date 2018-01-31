@@ -133,7 +133,7 @@ let dataSet2 =
 ];
 
 
-let dataSetresult = [];
+let dataSetresult = [];//Array to store the result of the merger
 
 function arrayMerge(arr1,arr2)
 {
@@ -146,18 +146,18 @@ function arrayMerge(arr1,arr2)
         {
             if(arr1[i]._id.includes(arr2[i]._id))
             {
-                dataSetresult.push(Object.assign(arr1[i], arr2[i]));
+                dataSetresult.push(Object.assign(arr1[i], arr2[i]));//Does the merging
             }
         }
         return dataSetresult;
     }
-    else
+    else //For if dataset2 is greater than dataset1
     {
         for(let i = 0; i < data1Len; i++)
         {
             if(arr2[i]._id.includes(arr1[i]._id))
             {
-                dataSetresult.push(Object.assign(arr2[i], arr1[i]));
+                dataSetresult.push(Object.assign(arr2[i], arr1[i])); //Does the merging
             }
         }
         return dataSetresult;
