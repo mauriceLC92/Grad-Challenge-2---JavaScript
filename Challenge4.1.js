@@ -1,6 +1,6 @@
 
 /*
-Challenge 4 - Indexing & Searching
+Challenge 4 - Indexing & Searching   -- Same as Challenge4.js except using for loop for method 2 and not a filter
 
 We have a large array of users which are comprised of 3 different user types ("Admin", "Moderator", "User").
 Each user will have the following properties: ("name", "companyId", "type").
@@ -100,11 +100,14 @@ function searchUsers(orchestratedUsers, userTypes, property, value) {
 }
 
 function searchUsers(orchestratedUsers, userTypes, property, value) {
-
-  returnedUser = orchestratedUsers[userTypes].filter(function (search)
+  for(let i = 0; i < orchestratedUsers[userTypes].length; i++)
   {
-      return (search[property] === value);
-  });
+    if(orchestratedUsers[userTypes][i][property] === value)
+    {
+      returnedUser.push(orchestratedUsers[userTypes][i]);
+    }
+  }
+
 }
 
 //Surely the function shouldnt take in an array but jus a certain type from the array....?
