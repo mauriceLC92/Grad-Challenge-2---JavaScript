@@ -10,8 +10,8 @@ let recursiveData = JSON.parse(fs.readFileSync('recursionData.json', 'utf8'));
 
 function totalSum(obj)
 {
-    var total = 0;
-    for(var x in obj)
+    let total = 0;
+    for(let x in obj)
     {
         if(typeof obj[x] === "number")
             total += obj[x];
